@@ -22,7 +22,7 @@ h2 {
 
 .signup-content > form {
   width: 50%;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .signup-input {
@@ -61,7 +61,7 @@ label {
 }
 
 .signup-button {
-  height: 40px;
+  height: 45px;
   background-color: #65e3b8;
   color: white;
   border-radius: 3px;
@@ -70,4 +70,22 @@ label {
   font-family: "montserrat", sans-serif;
   margin-top: 20px;
   width: 100%;
+}
+
+.signup-text {
+  color: #854df3;
+  font-family: "montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 20px;
+  display: flex;
+}
+
+.text-1 {
+  margin-right: 10px;
+}
+
+.text-2 {
+  text-decoration: underline;
+  cursor: pointer;
 }

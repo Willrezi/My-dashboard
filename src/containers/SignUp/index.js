@@ -8,7 +8,8 @@ class SignUp extends Component {
     email: "",
     username: "",
     password: "",
-    confirmedPassword: ""
+    confirmedPassword: "",
+    errorMessage: ""
   };
 
   render() {
@@ -44,6 +45,15 @@ class SignUp extends Component {
                 Inscription
               </button>
             </form>
+            <div className="signup-text">
+              <p className="text-1">Vous avez déjà un compte ?</p>
+              <p
+                className="text-2"
+                onClick={() => this.props.history.push("/login")}
+              >
+                Connectez-vous
+              </p>
+            </div>
           </div>
         </div>
       </Fragment>
