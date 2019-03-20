@@ -19,7 +19,7 @@ class SignUp extends Component {
     const { email, username, password, confirmedPassword } = this.state;
     if (email === "") {
       swal({
-        title: "Veuillez saisir votre email",
+        title: "Veuillez saisir votre Email",
         icon: "warning",
         dangerMode: true
       });
@@ -66,11 +66,6 @@ class SignUp extends Component {
           console.log(error.message);
         });
     }
-    // } else {
-    //   this.setState({
-    //     errorMessage: "Les mots de passe ne sont pas identiques"
-    //   });
-    // }
     event.preventDefault();
   };
 
