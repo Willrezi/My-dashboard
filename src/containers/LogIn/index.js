@@ -13,6 +13,11 @@ class LogIn extends Component {
     password: ""
   };
 
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+
   onSubmit = event => {
     const { username, password } = this.state;
     if (username === "") {
@@ -34,7 +39,7 @@ class LogIn extends Component {
           password: password
         })
         .then(response => {
-          console.log(response.data);
+          //   console.log(response.data);
           if (response.data.token) {
             Cookies.set("token", response.data.token);
             Cookies.set("username", response.data.username);
@@ -64,9 +69,8 @@ class LogIn extends Component {
                 <label>Pseudo</label>
                 <input
                   type="text"
-                  onChange={event => {
-                    this.setState({ username: event.target.value });
-                  }}
+                  name="username"
+                  onChange={this.handleChange}
                   value={this.state.username}
                 />
               </div>
@@ -76,9 +80,7 @@ class LogIn extends Component {
                   id="password"
                   name="password"
                   type="password"
-                  onChange={event => {
-                    this.setState({ password: event.target.value });
-                  }}
+                  onChange={this.handleChange}
                   value={this.state.value}
                 />
               </div>

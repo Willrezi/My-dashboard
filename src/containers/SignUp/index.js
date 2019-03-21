@@ -15,7 +15,7 @@ class SignUp extends Component {
     errorMessage: ""
   };
 
-  onSubmit = event => {
+  getAlertMessage = () => {
     const { email, username, password, confirmedPassword } = this.state;
     if (email === "") {
       swal({
@@ -35,6 +35,12 @@ class SignUp extends Component {
         icon: "warning",
         dangerMode: true
       });
+    } else if (password.length < 6) {
+      swal({
+        title: "Votre mot de passe doit contenir au moins 6 caractères",
+        icon: "warning",
+        dangerMode: true
+      });
     } else if (confirmedPassword === "") {
       swal({
         title: "Veuillez confirmer votre mot de passe",
@@ -42,6 +48,16 @@ class SignUp extends Component {
         dangerMode: true
       });
     }
+  };
+
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+
+  onSubmit = event => {
+    const { email, username, password, confirmedPassword } = this.state;
+    this.getAlertMessage();
     if (password !== confirmedPassword) {
       this.setState({
         errorMessage: "Les mots de passe ne sont pas identiques"
@@ -54,7 +70,7 @@ class SignUp extends Component {
           password: password
         })
         .then(response => {
-          console.log(response.data);
+          //   console.log(response.data);
           if (response.data.token) {
             Cookies.set("token", response.data.token);
             Cookies.set("username", response.data.username);
@@ -92,9 +108,8 @@ class SignUp extends Component {
                 <label>Adresse email</label>
                 <input
                   type="email"
-                  onChange={event => {
-                    this.setState({ email: event.target.value });
-                  }}
+                  name="email"
+                  onChange={this.handleChange}
                   value={this.state.email || ""}
                 />
               </div>
@@ -102,9 +117,8 @@ class SignUp extends Component {
                 <label>Pseudo</label>
                 <input
                   type="text"
-                  onChange={event => {
-                    this.setState({ username: event.target.value });
-                  }}
+                  name="username"
+                  onChange={this.handleChange}
                   value={this.state.username || ""}
                 />
               </div>
@@ -115,9 +129,7 @@ class SignUp extends Component {
                     id="password"
                     name="password"
                     type="password"
-                    onChange={event => {
-                      this.setState({ password: event.target.value });
-                    }}
+                    onChange={this.handleChange}
                     value={this.state.password}
                   />
                 </div>
@@ -127,9 +139,7 @@ class SignUp extends Component {
                     id="confirmedPassword"
                     name="confirmedPassword"
                     type="password"
-                    onChange={event => {
-                      this.setState({ confirmedPassword: event.target.value });
-                    }}
+                    onChange={this.handleChange}
                     value={this.state.confirmedPassword}
                   />
                 </div>
