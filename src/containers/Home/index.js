@@ -4,6 +4,7 @@ import Cookies from "js-cookie";
 
 import "./style.css";
 import axios from "axios";
+import BooksList from "../../components/BooksList";
 
 class Home extends Component {
   state = {
@@ -27,7 +28,7 @@ class Home extends Component {
         headers: { Authorization: "Bearer " + token }
       })
       .then(response => {
-        // console.log(response.data[0].books);
+        console.log("Mes livres", response.data[0].books);
         this.setState({ books: response.data[0].books });
       });
   }
@@ -35,8 +36,10 @@ class Home extends Component {
   render() {
     return (
       <Fragment>
-        This is the Home component
-        <div>{console.log(this.state)}</div>
+        <div className="home-container">
+          {console.log("this.state.books", this.state.books)}
+          <BooksList books={this.state.books} />
+        </div>
       </Fragment>
     );
   }
