@@ -28,7 +28,7 @@ class App extends Component {
         <Fragment>
           <Switch>
             <Route exact path="/">
-              <Redirect to="/login" />
+              <Redirect to="/home" />
             </Route>
             <Route path="/signup" component={SignUp} />
             <Route path="/login" component={LogIn} />
