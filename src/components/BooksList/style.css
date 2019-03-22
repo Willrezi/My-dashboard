@@ -1,3 +1,32 @@
-.booklist-container {
-  padding: 60px 40px 0;
+/* .booklist-container {
+  border: 1px solid gray;
+} */
+
+.header-style {
+  height: 40px;
+  background-color: #854df3;
+  color: white;
+  font-family: "montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.large-width {
+  width: 230px;
+}
+
+.medium-width {
+  width: 150px;
+}
+
+.normal-width {
+  width: 110px;
+}
+
+.small-width {
+  width: 90px;
+}
+
+table {
+  border-bottom: 1px solid #f3f3f3;
 }

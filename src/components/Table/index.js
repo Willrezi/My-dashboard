@@ -3,35 +3,21 @@ import "./style.css";
 
 class Table extends Component {
   render() {
+    console.log("this.props", this.props);
     return (
       <Fragment>
-        <table>
-          {/* <thead>
-            <tr>
-              <th>Titre</th>
-              <th>Auteur</th>
-              <th>Editeur</th>
-              <th>Pays</th>
-              <th>Genre</th>
-              <th>Nb Pages</th>
-              <th>Note</th>
-              <th>Lu en</th>
-            </tr>
-          </thead> */}
-          <tbody>
-            <tr>
-              <td>{this.props.title}</td>
-              <td>{this.props.author}</td>
-              <td>{this.props.editor}</td>
-              <td>{this.props.country}</td>
-              <td>{this.props.genre}</td>
-              <td>{this.props.pages}</td>
-              <td>{this.props.note}</td>
-              <td>{this.props.read}</td>
-            </tr>
-          </tbody>
-        </table>
-        <div> </div>
+        <tbody>
+          <tr className="row-style">
+            <td className="large-width">{this.props.title}</td>
+            <td className="medium-width">{this.props.author}</td>
+            <td className="medium-width">{this.props.editor}</td>
+            <td className="normal-width">{this.props.country}</td>
+            <td className="normal-width">{this.props.genre}</td>
+            <td className="normal-width center">{this.props.pages}</td>
+            <td className="small-width center">{this.props.note}</td>
+            <td className="small-width">{this.props.read}</td>
+          </tr>
+        </tbody>
       </Fragment>
     );
   }

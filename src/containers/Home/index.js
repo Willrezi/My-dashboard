@@ -39,6 +39,7 @@ class Home extends Component {
         <div className="home-container">
           {console.log("this.state.books", this.state.books)}
           <BooksList books={this.state.books} />
+          <button onClick={this.onSubmit}>Ajouter</button>
         </div>
       </Fragment>
     );

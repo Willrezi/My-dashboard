@@ -1,0 +1,15 @@
+.row-style {
+  height: 32px;
+  font-family: "montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  border: 1px solid gray;
+}
+
+.center {
+  text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f3f3f3;
+}

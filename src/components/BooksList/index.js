@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Table from "../Table";
-/* import "./style.css"; */
+import "./style.css";
 
 class BooksList extends Component {
   render() {
@@ -23,24 +23,26 @@ class BooksList extends Component {
       );
     }
 
-    console.log("booklist", bookList);
+    console.log("booklist", bookList.length);
     return (
-      <div className="booklist-container">
+      <div className="booklist-container ">
+        {/* <div> */}
         <table>
           <thead>
-            <tr>
-              <th>Titre</th>
-              <th>Auteur</th>
-              <th>Editeur</th>
-              <th>Pays</th>
-              <th>Genre</th>
-              <th>Nb Pages</th>
-              <th>Note</th>
-              <th>Lu en</th>
+            <tr className="header-style">
+              <th className="large-width">Titre</th>
+              <th className="medium-width">Auteur</th>
+              <th className="medium-width">Editeur</th>
+              <th className="normal-width">Pays</th>
+              <th className="normal-width">Genre</th>
+              <th className="normal-width">Nb Pages</th>
+              <th className="small-width">Note</th>
+              <th className="small-width">Lu en</th>
             </tr>
           </thead>
+          {bookList}
         </table>
-        {bookList}
+        {/* </div> */}
       </div>
     );
   }
