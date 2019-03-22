@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 import "./style.css";
 import axios from "axios";
 import BooksList from "../../components/BooksList";
+import AddBooks from "../../components/AddBooks";
 
 class Home extends Component {
   state = {
@@ -39,7 +40,7 @@ class Home extends Component {
         <div className="home-container">
           {console.log("this.state.books", this.state.books)}
           <BooksList books={this.state.books} />
-          <button onClick={this.onSubmit}>Ajouter</button>
+          <AddBooks />
         </div>
       </Fragment>
     );
