@@ -1,5 +1,5 @@
 .open-modal {
-  height: 25px;
+  height: 30px;
   width: 110px;
   background-color: #65e3b8;
   color: white;
@@ -7,7 +7,7 @@
   margin-top: 20px;
   border-radius: 3px;
   font-family: "montserrat", sans-serif;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .modal-title {
@@ -19,12 +19,19 @@
   display: flex;
   flex-direction: column;
   width: 500px;
+  padding: 0 10px;
 }
 
 .modal-input > label {
   font-family: "montserrat", sans-serif;
   color: #854df3;
-  margin-top: 15px;
+  margin-top: 20px;
+}
+
+.modal-input > input {
+  border: none;
+  border-bottom: 1px solid rgba(133, 77, 243, 0.75);
+  height: 25px;
 }
 
 .center-button {

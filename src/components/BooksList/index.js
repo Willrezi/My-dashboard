@@ -6,11 +6,12 @@ class BooksList extends Component {
   render() {
     let bookList = [];
     for (let i = 0; i < this.props.books.length; i++) {
-      console.log("this.props.books", this.props.books);
+      //   console.log("this.props.books", this.props.books);
 
       bookList.push(
         <Table
           key={i}
+          id={this.props.books[i]._id}
           title={this.props.books[i].title}
           author={this.props.books[i].author}
           editor={this.props.books[i].editor}
@@ -23,7 +24,7 @@ class BooksList extends Component {
       );
     }
 
-    console.log("booklist", bookList.length);
+    // console.log("booklist", bookList.length);
     return (
       <div className="booklist-container ">
         {/* <div> */}

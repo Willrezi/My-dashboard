@@ -19,7 +19,7 @@ class Home extends Component {
     this.props.history.push("/signup");
   };
 
-  componentDidMount() {
+  refreshTask = () => {
     const { token, _id } = this.state;
     if (!token) {
       this.redirectToSignupPage();
@@ -29,18 +29,23 @@ class Home extends Component {
         headers: { Authorization: "Bearer " + token }
       })
       .then(response => {
+        this.setState({ books: response.data[0].books.reverse() });
+
         console.log("Mes livres", response.data[0].books);
-        this.setState({ books: response.data[0].books });
       });
+  };
+
+  componentDidMount() {
+    this.refreshTask();
   }
 
   render() {
     return (
       <Fragment>
         <div className="home-container">
-          {console.log("this.state.books", this.state.books)}
+          {/* {console.log("this.state.books", this.state.books)} */}
           <BooksList books={this.state.books} />
-          <AddBooks />
+          <AddBooks refreshTask={this.refreshTask} />
         </div>
       </Fragment>
     );
