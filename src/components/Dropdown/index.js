@@ -43,7 +43,6 @@ class Dropdown extends Component {
           <img
             className="button"
             onClick={this.showDropdownMenu}
-            // onMouseLeave={this.hideDropdownMenu}
             src={avatar}
             alt="avatar"
           />
