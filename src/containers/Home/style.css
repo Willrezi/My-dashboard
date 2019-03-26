@@ -1,3 +1,14 @@
 .home-container {
   padding: 60px 40px 0;
 }
+
+.books-container {
+  display: flex;
+}
+
+.totalRead-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  /* align-items: center; */
+}

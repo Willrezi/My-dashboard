@@ -7,6 +7,7 @@ import axios from "axios";
 import BooksList from "../../components/BooksList";
 import AddBooks from "../../components/AddBooks";
 import Pagination from "../../components/Pagination";
+import TotalRead from "../../components/TotalRead";
 
 const MAX_ELEMENTS_PER_PAGE = 4;
 
@@ -65,13 +66,23 @@ class Home extends Component {
     return (
       <Fragment>
         <div className="home-container">
-          <BooksList books={this.state.books} />
-          <AddBooks refreshTask={this.refreshTask} />
-          <Pagination
-            skip={this.state.searchParams.skip}
-            updateSearchParams={this.updateSearchParams}
-            refreshTask={this.refreshTask}
-          />
+          <div className="books-container">
+            <div>
+              <BooksList books={this.state.books} />
+              <AddBooks refreshTask={this.refreshTask} />
+              <Pagination
+                skip={this.state.searchParams.skip}
+                updateSearchParams={this.updateSearchParams}
+                refreshTask={this.refreshTask}
+              />
+            </div>
+            <div className="totalRead-container">
+              <TotalRead
+                refreshTask={this.refreshTask}
+                books={this.state.books}
+              />
+            </div>
+          </div>
         </div>
       </Fragment>
     );
