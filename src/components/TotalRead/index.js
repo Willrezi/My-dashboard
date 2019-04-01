@@ -11,7 +11,7 @@ class TotalRead extends Component {
   };
 
   render() {
-    console.log("totalRead", this.props.books);
+    // console.log("totalRead", this.props.books);
     return (
       <Fragment>
         <div className="read-container">

@@ -96,8 +96,6 @@ class AddBooks extends Component {
   };
 
   render() {
-    // console.log(this.state);
-
     return (
       <div>
         <button className="open-modal" onClick={this.openModal} type="button">

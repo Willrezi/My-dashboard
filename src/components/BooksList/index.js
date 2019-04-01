@@ -24,7 +24,7 @@ class BooksList extends Component {
       );
     }
 
-    console.log("booklist", bookList.length);
+    // console.log("booklist", bookList.length);
     return (
       <div className="booklist-container ">
         {/* <div> */}

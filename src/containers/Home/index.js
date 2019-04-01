@@ -52,7 +52,7 @@ class Home extends Component {
       .then(response => {
         this.setState({ books: response.data[0].books.reverse() });
         console.log("ici", this.state.searchParams);
-        console.log("Mes livres", response.data[0].books.length);
+        // console.log("Mes livres", response.data[0].books.length);
       });
   };
 
