@@ -8,6 +8,7 @@ import BooksList from "../../components/BooksList";
 import AddBooks from "../../components/AddBooks";
 import Pagination from "../../components/Pagination";
 import TotalRead from "../../components/TotalRead";
+import BarChart from "../../components/BarChart";
 
 const MAX_ELEMENTS_PER_PAGE = 4;
 
@@ -75,6 +76,7 @@ class Home extends Component {
                 updateSearchParams={this.updateSearchParams}
                 refreshTask={this.refreshTask}
               />
+              <BarChart books={this.state.books} />
             </div>
             <div className="totalRead-container">
               <TotalRead
